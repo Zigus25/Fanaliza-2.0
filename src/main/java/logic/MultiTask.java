@@ -15,7 +15,7 @@ public class MultiTask implements Runnable{
         }
         String link = null;
         try {
-            link = DBlog.GetLink(whi);
+            link = DBlog.GetLink();
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -79,7 +79,7 @@ public class DBLogic {
     //Adding data to DB
     public void AddData(Elements[] DataSource, String[] SplitLink) {
         try (
-                PreparedStatement RacersToDB = this.connection.prepareStatement("INSERT INTO Results (Position,Driver,Num,Poi,Team,ID,Year) VALUES (?,?,?,?,?,?,?)");
+                PreparedStatement RacersToDB = this.connection.prepareStatement("INSERT INTO Results (Position,Driver,Num,Poi,Team,ID,Year) VALUES (?,?,?,?,?,?,?)")
         ) {
             for (int i = 0; i < Objects.requireNonNull(DataSource[0]).size(); i++) {
                 RacersToDB.setString(1, DataSource[0].get(i).text());
@@ -96,7 +96,7 @@ public class DBLogic {
             e.printStackTrace();
         }
         try (
-                PreparedStatement RaceToDB = this.connection.prepareStatement("INSERT INTO Races (ID,Year,Place) VALUES (?,?,?)");
+                PreparedStatement RaceToDB = this.connection.prepareStatement("INSERT INTO Races (ID,Year,Place) VALUES (?,?,?)")
         ) {
 
             RaceToDB.setString(1, SplitLink[7]);
@@ -109,7 +109,7 @@ public class DBLogic {
     }
 
     //Getting link from DB
-    public String GetLink(int whi) throws SQLException {
+    public String GetLink() throws SQLException {
         String query = "SELECT Link FROM Links WHERE StateOf = 0";
         String link = linkStatement.executeQuery(query).getString("Link");
         linkStatement.executeUpdate("UPDATE Links SET StateOf = 1 WHERE Link = '"+link+"'");

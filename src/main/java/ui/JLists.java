@@ -20,7 +20,7 @@ public class JLists {
 
     static Logic logic = dbLogic.passConnectionL();
 
-    public JLists() throws ErrorException {
+    public JLists() {
     }
 
     public static JList<Integer> years() throws SQLException {
