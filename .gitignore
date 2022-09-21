@@ -119,3 +119,5 @@ fabric.properties
 
 # Project exclude paths
 /target/
+/Links.db-shm
+/Links.db-wal
