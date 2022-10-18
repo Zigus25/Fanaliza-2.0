@@ -7,3 +7,5 @@ Program is creating statistic from F1
 * Java
 * SQLite
 * Maven
+## Why?
+I'm enthusiast of F1 and i was bored, so i decide to write my own program for statistics of this sport. 
